@@ -1,3 +1,5 @@
+## pacakge link: https://marketplace.visualstudio.com/items?itemName=lmn.path-indicator
+
 #### This is a project path identification tool, used to use path names under different paths in the region
 #### For example, if your project is the same project but has different branches, if you open two projects with vscode at  
 #### the same time, it is difficult to distinguish which branch belongs to.
