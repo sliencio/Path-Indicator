@@ -35,3 +35,18 @@ The project name is ParentDir
 ``` json
     "pathIndicator.defaultColor":"#ffffff"
 ```
+
+
+### how to build
+  install vsce and package
+
+  ``` json
+    // 1. install modules
+    npm install
+
+    // 2.
+    npm i vsce -g
+
+    // 3.
+    vsce package
+  ```
