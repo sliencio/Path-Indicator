@@ -1,0 +1,81 @@
+{
+  "name": "path-indicator",
+  "icon": "resources/icon.png",
+  "displayName": "Path Indicator",
+  "description": "Show a custom indicator based on the project path in the top-right corner.",
+  "version": "1.0.5",
+  "publisher": "lmn",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/sliencio/PublicMyRes.git" 
+  },
+  "readme": "README.md",
+  "engines": {
+    "vscode": "^1.75.0"
+  },
+  "activationEvents": [
+    "onStartupFinished",
+    "onDidChangeWorkspaceFolders"
+  ],
+  "main": "./dist/extension.js",
+  "contributes": {
+    "configuration": {
+      "type": "object",
+      "title": "Path Indicator Settings",
+      "properties": {
+        "pathIndicator.paths": {
+          "type": "array",
+          "description": "Define paths,color and their corresponding indicators.",
+          "items": {
+            "type": "object",
+            "properties": {
+              "path": {
+                "type": "string",
+                "description": "Workspace path."
+              },
+              "text": {
+                "type": "string",
+                "description": "Indicator text."
+              },
+              "color": {
+                "type": "string",
+                "description": "Indicator background color.",
+                "format": "color-hex"
+              }
+            }
+          },
+          "default": [{
+            "path": "E:/Projects/code",
+            "text": "Master",
+            "color": "#dbe2ef"
+          }]
+        },
+        "pathIndicator.defaultColor":{
+          "type": "string",
+          "default": "#dbe2ef",
+          "description": "default color",
+          "format": "color-hex"
+        },
+        "pathIndicator.defaultPathMatchs":{
+          "type": "array",
+          "description": "Define Path Matchs,Will display parent dir",
+          "default": ["/code/client"],
+           "items": {
+            "type": "string"
+          }
+        }
+
+      }
+    }
+  },
+  "scripts": {
+    "build": "tsc",
+    "watch": "tsc -w",
+    "prepublishOnly": "tsc"
+  },
+  "devDependencies": {
+    "typescript": "^4.0.0",
+    "@types/node": "^14.0.0",
+    "@types/vscode": "^1.75.0"
+  }
+}
